@@ -1,20 +1,63 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
+import React from 'react';
+import {View, Text} from 'react-native';
+/*L01 Exercise 1*/
+const Welcome = ()=> {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <View>
+        <Text>
+          Welcome to C346 - Mobile App Development
+        </Text>
+      </View>
   );
+};
+
+//export default Welcome;
+
+/*L01 Exercise 2*/
+const Welcome2 = ()=> {
+  return (
+      <View>
+        <Text>
+          These are my modules this semester:
+        </Text>
+      </View>
+  );
+};
+
+class ModuleInfo2 extends React.Component {
+  render() {
+    return (
+        <View>
+          <Welcome2/>
+        </View>
+    )
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+//export default ModuleInfo2;
+
+/*L01 Exercise 3*/
+const Welcome3 = ({code,name})=> {
+  return (
+      <View>
+        <Text>
+          Welcome to {code} - {name}
+        </Text>
+      </View>
+  );
+};
+
+class ModuleInfo3 extends React.Component {
+  render() {
+    return (
+        <View>
+          <Welcome2/>
+          <Welcome3 code="C346" name="Mobile App Development"/>
+          <Welcome3 code="C382" name="IT Service Delivery"/>
+          <Welcome3 code="A002" name="Eating well, Living well"/>
+        </View>
+    )
+  }
+}
+
+export default ModuleInfo3;
